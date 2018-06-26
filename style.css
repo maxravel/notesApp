@@ -1,0 +1,10 @@
+#taskA{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 1em;
+}
+
+#taskA > div{
+    padding: 1em;
+}

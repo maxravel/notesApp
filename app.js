@@ -1,5 +1,4 @@
-console.log("frwerw");
-
+// selectors
 const submitButton = document.querySelector("#submitB");
 const taskText = document.querySelector("#taskT");
 const taskArea = document.querySelector("#taskA");
@@ -7,7 +6,6 @@ const taskArea = document.querySelector("#taskA");
 submitButton.addEventListener("click",logTask);
 
 function logTask(){
-    console.log(taskText.value);
     let newTask = document.createElement("div");
     newTask.textContent = taskText.value;
     newTask.style.border = "1px solid black";
@@ -17,11 +15,16 @@ function logTask(){
     removeTaskButton.style.width = "15px";
     removeTaskButton.style.borderRadius = "50%";
     removeTaskButton.classList.add("delete");
-    // removeTaskButton.style.position = "relative";
-    // removeTaskButton.style.left = "10px";
     removeTaskButton.style.float = "right";
     newTask.appendChild(removeTaskButton);
     taskArea.appendChild(newTask);
+    taskText.value = "";
+
+    //storing in localStorage
+    // let tasks=JSON.parse(localStorage.getItem('tasks'));
+    // console.log(tasks);
+    // tasks.push(taskText.value);
+    // localStorage.setItem("tasks", JSON.stringify(tasks));
 
 }
 
